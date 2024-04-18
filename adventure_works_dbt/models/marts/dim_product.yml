@@ -1,0 +1,67 @@
+version: 2
+
+sources:
+  - name: base
+    database: AdventureWorks2019
+    schema: Production
+    tables:
+      - name: Product
+      - name: ProductSubcategory
+      - name: ProductCategory
+
+
+models:
+  - name: dim_product
+    description: ""
+    columns:
+      - name: productkey
+        data_type: varchar
+        description: "the surrogate key of the product"
+        tests:
+          - not_null
+          - unique
+
+      - name: productid
+        data_type: int
+        description: "the natural key of the product"
+        tests:
+          - not_null
+          - unique
+
+      - name: productnumber
+        data_type: nvarchar
+        description: ""
+
+      - name: productmodelid
+        data_type: int
+        description: "Product is a member of this product model. Foreign key to ProductModel.ProductModelID."
+
+      - name: productname
+        data_type: name
+        description: "the name of the product"
+        tests:
+        - unique
+        - not_null
+
+      - name: color
+        data_type: nvarchar
+        description: ""
+
+      - name: class
+        data_type: nchar
+        description: ""
+
+      - name: style
+        data_type: nchar
+        description: ""
+
+      - name: subcategoryname
+        data_type: name
+        description: ""
+
+      - name: categoryname
+        data_type: name
+        description: ""
+
+
+
