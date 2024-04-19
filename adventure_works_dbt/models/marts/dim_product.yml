@@ -16,52 +16,62 @@ models:
     columns:
       - name: productkey
         data_type: varchar
-        description: "the surrogate key of the product"
+        description: "The surrogate key of the product."
         tests:
           - not_null
           - unique
 
       - name: productid
         data_type: int
-        description: "the natural key of the product"
+        description: "The natural key of the product."
         tests:
           - not_null
           - unique
 
       - name: productnumber
         data_type: nvarchar
-        description: ""
+        description: "Unique product identification number."
+        tests:
+          - not_null
+          - unique
 
       - name: productmodelid
         data_type: int
-        description: "Product is a member of this product model. Foreign key to ProductModel.ProductModelID."
+        description: "Product is a member of this product model."
 
       - name: productname
         data_type: name
-        description: "the name of the product"
+        description: "The name of the product."
         tests:
-        - unique
-        - not_null
+          - unique
+          - not_null
 
       - name: color
         data_type: nvarchar
-        description: ""
+        description: "Product color."
 
       - name: class
         data_type: nchar
-        description: ""
+        description: "H = High, M = Medium, L = Low."
+        tests:
+          - accepted_values:
+              values: ['H',  'M', 'L']
 
       - name: style
         data_type: nchar
-        description: ""
+        description: "W = Womens, M = Mens, U = Universal."
+        tests:
+          - accepted_values:
+              values: ['W',  'M', 'U']
+
 
       - name: subcategoryname
         data_type: name
-        description: ""
+        description: "Subcategory description."
 
       - name: categoryname
         data_type: name
-        description: ""
+        description: "Category description."
 
 
 

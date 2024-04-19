@@ -5,11 +5,10 @@ This project is to create dimensional models (Kimball approach) for AdventureWor
 - Purchasing
 - Business Processes Monitoring 
 
-Technology using:
+Environment Setup:
 - dbtCore: for modeling data
-- SQL Server
+- SQL Server on Docker
 - SQL Server Management Studio
-- 
 
 
 
@@ -143,3 +142,8 @@ dbt build --select dim_product
 ```
 
 ## 2. Create the remain dimension tables follow dim_product
+- dim_customer
+- dim_date
+- dim_order_status
+- dim_address
+- dim_credit_card
