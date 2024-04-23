@@ -110,7 +110,7 @@ Dimension tables:
 - dim_date: date-table (from seed) or dbt_date packages (check later to see if it works for SQL SERVER)
 - dim_order_status: distinct statuses from SalesOrderHeader
 - dim_address: Person.Adress, Person.StateProvince, Person.CountryRegion
-- dim_credit_card: from Sales.CreditCard
+
 
 ## Create Dimention Tables
 
@@ -146,4 +146,3 @@ dbt build --select dim_product
 - dim_date
 - dim_order_status
 - dim_address
-- dim_credit_card
