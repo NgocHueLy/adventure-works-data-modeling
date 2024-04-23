@@ -11,12 +11,15 @@ date_table AS (
     FROM date_table
 )
 
-SELECT 
+SELECT
+    {{ sqlserver__generate_surrogate_key(['date']) }} AS DateKey,
     Date,
     DATEPART(year, date) AS Year,
     DATEPART(quarter, date) AS Quarter,
+    DATENAME(quarter, date) AS QuarterName,
     DATEPART(month, date) AS Month,
     DATENAME( month , Date ) AS MonthName,
+    EOMONTH(date) AS EndOfMonth,
     DATEPART(week, date) AS Week,
     DATEPART(weekday, date) AS WeekDay,
     DATENAME(weekday, date) AS WeekDayName

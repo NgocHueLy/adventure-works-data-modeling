@@ -2,9 +2,13 @@ models:
   - name: dim_date
     description: "date dimention table"
     columns:
+      - name: datekey
+        data_type: nvarchar
+        description: "surrogate key"
+
       - name: date
         data_type: date
-        description: "date from 2011-01-01 to 2014-12-31"
+        description: "natural key, date from 2011-01-01 to 2014-12-31"
 
       - name: year
         data_type: int
@@ -13,6 +17,10 @@ models:
       - name: quarter
         data_type: int
         description: "quarter of date"
+
+      - name: quarter
+        data_type: nvarchar
+        description: "name of quarter"
 
       - name: month
         data_type: int
