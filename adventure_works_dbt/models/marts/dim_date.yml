@@ -1,0 +1,35 @@
+models:
+  - name: dim_date
+    description: "date dimention table"
+    columns:
+      - name: date
+        data_type: date
+        description: "date from 2011-01-01 to 2014-12-31"
+
+      - name: year
+        data_type: int
+        description: "year of date"
+
+      - name: quarter
+        data_type: int
+        description: "quarter of date"
+
+      - name: month
+        data_type: int
+        description: "month of date"
+
+      - name: monthname
+        data_type: nvarchar
+        description: "name of month"
+
+      - name: week
+        data_type: int
+        description: "week of date"
+
+      - name: weekday
+        data_type: int
+        description: "week day, value from 1 to 7, with Sunday = 1"
+
+      - name: weekdayname
+        data_type: nvarchar
+        description: "name of weekday, value from MOnday to Sunday"

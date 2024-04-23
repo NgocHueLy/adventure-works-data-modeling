@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: base
+    database: AdventureWorks2019
+    schema: Person
+    tables:
+      - name: Address
+      - name: StateProvince
+      - name: CountryRegion
+
+models:
+  - name: dim_address
+    description: "city, state, country name"
+    columns:
+      - name: addresskey
+        data_type: varchar
+        description: "the surrogate key for address"
+        tests:
+          - not_null
+          - unique
+
+      - name: addressid
+        data_type: int
+        description: "the natural key for address"
+        tests:
+          - not_null
+          - unique
+
+      - name: city
+        data_type: nvarchar
+        description: "city name"
+
+      - name: spatiallocation
+        data_type: geography
+        description: "latitude and longtitude of this address"
+
+      - name: stateprovincename
+        data_type: name
+        description: "state or province name"
+
+      - name: countryregionname
+        data_type: name
+        description: "country or region name"

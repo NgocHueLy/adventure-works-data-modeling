@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: base
+    database: AdventureWorks2019
+    schema: Person
+    tables:
+      - name: Person
+  
+  - name: base
+    database: AdventureWorks2019
+    schema: Sales
+    tables:
+      - name: Customer
+      - name: Store
+
+models:
+  - name: dim_customer
+    description: "Current customers of business"
+    columns:
+      - name: customerkey
+        data_type: varchar
+        description: "The surrogate key of customer"
+        tests:
+          - not_null
+          - unique
+
+      - name: customerid
+        data_type: int
+        description: "The natural key of customer"
+        tests:
+          - not_null
+          - unique
+
+      - name: storename
+        data_type: name
+        description: "Name of store customer (B2B)"
+
+      - name: fullname
+        data_type: nvarchar
+        description: "Full name of store contact person (B2B) or individual customer (B2C)"
+
+
+
