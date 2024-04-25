@@ -107,12 +107,12 @@ Fact table:
 Dimension tables:
 - dim_product: from Production.Product, Production.ProductSubcategory, Production.ProductCategory
 - dim_customer: from Sales.Customer, Sales.Store, Person.Person
-- dim_date: date-table (from seed) or dbt_date packages (check later to see if it works for SQL SERVER)
+- dim_date: generated from SQL query
 - dim_order_status: distinct statuses from SalesOrderHeader
 - dim_address: Person.Adress, Person.StateProvince, Person.CountryRegion
 
 
-## Create Dimention Tables
+## Create Dimention Tables  and Fact Table
 
 ### 1. dim_product
 
@@ -146,3 +146,13 @@ dbt build --select dim_product
 - dim_date
 - dim_order_status
 - dim_address
+- dim_special_discount
+
+## 3. Create Fact table
+- Follow the above steps for dimension tables
+- Create foreign keys 
+
+# ERD for Sales dimensional model
+
+![](erd/dimensional_model_sales_process_erd.jpg)
+
