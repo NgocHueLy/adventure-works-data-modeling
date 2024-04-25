@@ -1,0 +1,83 @@
+version: 2
+
+sources:
+  - name: base
+    database: AdventureWorks2019
+    schema: Sales
+    tables:
+      # - name: SalesOrderHeader
+      - name: SalesOrderDetail
+
+
+models:
+  - name: fct_sales
+    description: "sales revenue fact table"
+    columns:
+      - name: saleskey
+        data_type: varchar
+        description: "surrogate key of fact sales, a combination of SalesOrderID and SalesOrderDetailID"
+        tests:
+          - not_null
+          - unique
+
+      - name: orderstatuskey
+        data_type: varchar
+        description: "the foreign key of the order status"
+        tests:
+          - not_null
+
+      - name: orderdatekey
+        data_type: varchar
+        description: "the foreign key of order date"
+        tests:
+          - not_null
+
+      - name: customerkey
+        data_type: varchar
+        description: "the foreign key of the customer"
+        tests:
+          - not_null
+
+      - name: shipaddresskey
+        data_type: varchar
+        description: "the foreign key of the address"
+        tests:
+          - not_null
+
+      - name: productkey
+        data_type: varchar
+        description: "the foreign key of the product"
+        tests:
+          - not_null
+
+      - name: specialoffertkey
+        data_type: varchar
+        description: "the foreign key of the special offer"
+        tests:
+          - not_null
+
+      - name: salesorderid
+        data_type: int
+        description: "sales order id"
+        tests:
+          - not_null
+
+      - name: salesorderdetailid
+        data_type: int
+        description: "sales order detail id"
+        tests:
+          - not_null
+
+      
+      - name: unitprice
+        data_type: money
+        description: "product price"
+
+      - name: orderqty
+        data_type: smallint
+        description: "quantity of the product"
+
+      - name: revenue
+        data_type: money
+        description: "the revenue obtained by multiplying unitprice and orderqty"
+

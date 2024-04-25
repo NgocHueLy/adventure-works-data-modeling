@@ -1,0 +1,51 @@
+version: 2
+
+sources:
+  - name: base
+    database: AdventureWorks2019
+    schema: Sales
+    tables:
+      - name: SpecialOffer
+
+
+models:
+  - name: dim_special_offer
+    description: "special offer dimension table"
+    columns:
+      - name: specialofferkey
+        data_type: varchar
+        description: "surrogate key for special offer table"
+        tests:
+          - not_null
+          - unique
+
+      - name: specialofferid
+        data_type: int
+        description: "natural key for special offer"
+        tests:
+          - not_null
+          - unique
+
+      - name: specialofferdescription
+        data_type: nvarchar
+        description: "special offer description"
+
+      - name: discountpct
+        data_type: smallmoney
+        description: "discount percentage"
+
+      - name: discounttype
+        data_type: nvarchar
+        description: "discount type category"
+
+      - name: category
+        data_type: nvarchar
+        description: "group the discount applies to such as Reseller or Customer"
+
+      - name: startdate
+        data_type: date
+        description: "Promotion start date"
+
+      - name: enddate
+        data_type: date
+        description: "Promotion end date"
