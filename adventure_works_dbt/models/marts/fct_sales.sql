@@ -31,7 +31,7 @@ SELECT
     {{ sqlserver__generate_surrogate_key(['h.ShipToAddressID']) }} AS ShipAddressKey,
     {{ sqlserver__generate_surrogate_key(['de.ProductID']) }} AS ProductKey,
     {{ sqlserver__generate_surrogate_key(['de.SpecialOfferID']) }} AS SpecialOffertKey,   
-    
+    h.OrderDate,
     de.SalesOrderID,
     de.SalesOrderDetailID,
     de.UnitPrice,
