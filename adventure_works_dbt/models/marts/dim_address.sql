@@ -20,4 +20,4 @@ SELECT
     c.Name AS CountryRegionName
 FROM address a 
 JOIN state_province s ON a.StateProvinceID = s.StateProvinceID
-JOIN country_region c ON s.Countr7yRegionCode = c.CountryRegionCode
+JOIN country_region c ON s.CountryRegionCode = c.CountryRegionCode
