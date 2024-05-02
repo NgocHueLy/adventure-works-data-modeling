@@ -18,6 +18,7 @@ SELECT
     p.Color,
     p.Class,
     p.Style,
+    p.StandardCost,
     sub.Name AS SubcategoryName,
     cat.Name AS CategoryName
 FROM product p

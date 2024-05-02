@@ -72,6 +72,10 @@ models:
       - name: categoryname
         data_type: name
         description: "Category description."
+      
+      - name: standardcost
+        data_type: money
+        description: "Standard Cost of the product - COGS."
 
 
 
